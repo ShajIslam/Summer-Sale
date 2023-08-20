@@ -35,10 +35,10 @@ for(let card of cards){
             makePurchaseBtn.setAttribute('disabled', true);
         }
         
-      totalPrice.innerText = total;
+      totalPrice.innerText = total.toFixed(2);
       const discountButton = document.getElementById('discount-btn');
         
-        if(total > 200){
+        if(total >= 200){
             discountButton.removeAttribute('disabled');
         }else{
             discountButton.setAttribute('disabled', true);
@@ -61,7 +61,7 @@ for(let card of cards){
 
                 const grandTotal = document.getElementById('total');
                 const calcGrandTotal = total - calcdiscount;
-                grandTotal.innerText = calcGrandTotal;
+                grandTotal.innerText = calcGrandTotal.toFixed(2);
 
             }else{
                 alert('invalid coupon code');
