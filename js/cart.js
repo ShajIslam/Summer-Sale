@@ -27,6 +27,13 @@ for(let card of cards){
         const totalPrice = document.getElementById('total-price');
         total =  parseFloat(total) + price;  
         console.log(total);
+
+        if(total > 0){
+            const makePurchaseBtn = document.getElementById('make-purchase-btn');
+            makePurchaseBtn.removeAttribute('disabled');
+        }else{
+            makePurchaseBtn.setAttribute('disabled', true);
+        }
         
       totalPrice.innerText = total;
       const discountButton = document.getElementById('discount-btn');
@@ -60,6 +67,18 @@ for(let card of cards){
                 alert('invalid coupon code');
             }
         }
-        
+
     
+    function goHome(){
+        const selectedItems = document.getElementById('selected-items');
+        const totalPrice = document.getElementById('total-price');
+        const discountField = document.getElementById('discount-field');
+        const grandTotal = document.getElementById('total');
+        const makePurchaseBtn = document.getElementById('make-purchase-btn');
+            selectedItems.innerText = '';
+            totalPrice.innerText=0.00;
+            discountField.innerText=0.00;
+            grandTotal.innerText=0.00;
+            makePurchaseBtn.setAttribute('disabled', true);
+;    }
 
