@@ -36,7 +36,7 @@ for(let card of cards){
         }
         
       totalPrice.innerText = total.toFixed(2);
-      const discountButton = document.getElementById('discount-btn');
+      const discountButton = document.getElementById('apply-btn');
         
         if(total >= 200){
             discountButton.removeAttribute('disabled');
@@ -54,8 +54,8 @@ for(let card of cards){
         const input = inputField.value;
         inputField.value = '';
                  
-            if(input == 'SELL22'){
-                const calcdiscount = (total/100)*22;
+            if(input == 'SELL200'){
+                const calcdiscount = (total/100)*20;
                 const discountField = document.getElementById('discount-field');
                 discountField.innerText = calcdiscount.toFixed(2);
 
@@ -75,10 +75,12 @@ for(let card of cards){
         const discountField = document.getElementById('discount-field');
         const grandTotal = document.getElementById('total');
         const makePurchaseBtn = document.getElementById('make-purchase-btn');
+        const applyButton = document.getElementById('apply-btn');
             selectedItems.innerText = '';
             totalPrice.innerText=0.00;
             discountField.innerText=0.00;
             grandTotal.innerText=0.00;
             makePurchaseBtn.setAttribute('disabled', true);
+            applyButton.setAttribute('disabled', true);
 ;    }
 
