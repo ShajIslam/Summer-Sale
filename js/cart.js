@@ -82,5 +82,6 @@ for(let card of cards){
             grandTotal.innerText=0.00;
             makePurchaseBtn.setAttribute('disabled', true);
             applyButton.setAttribute('disabled', true);
+            
 ;    }
 
